@@ -1,0 +1,31 @@
+.champImg {
+	float: right;
+	padding: 10px
+}
+
+h1 {
+	font-size: 30pt;
+}
+
+h3 {
+	color: grey;
+}
+
+p {
+	padding: 10px;
+}
+
+table, td, th {
+	color: white;
+	border: 1px solid gray;
+	border-collapse: collapse;
+}
+
+tr {
+	display: block;
+	float: left;
+}
+
+th, td {
+	display: block;
+}
