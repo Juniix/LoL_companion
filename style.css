@@ -12,7 +12,7 @@ body {
 
 .column {
 	margin:0 15px 25px;
-	background:#1a1a1a;
+	background:#121212;
 	padding:20px;
 }
 
@@ -40,7 +40,7 @@ img.main_page_icon {
 	object-fit: cover;
 	width: 100px;
 	height: 100px;
-	border: 3pt solid white; 
+	border: 3pt solid black; 
 	margin-bottom: 10px;
 }
 
