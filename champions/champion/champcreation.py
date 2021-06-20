@@ -8,7 +8,7 @@ with open('../../data_dragon/11.10.1/data/en_US/championFull.json','r', encoding
 
 statsHeader=['Health','Health per level','Mana','Mana per level','Movement speed','Armor','Armor per level','MR','MR per level','Range','HP regen','HP regen per level','Mana regen','Mana regen per level','Crit','Crit per level','AD','AD per level','AS per level','AS']
 
-def create_page(champName):
+def create_page(champName,champID):
 	stats=championStats[champName]
 	doc=dominate.document(title=champName+' - LoL Companion')
 
@@ -21,7 +21,7 @@ def create_page(champName):
 		meta(charset='utf-8')
 
 	with doc,div(cls='container'),div(cls='column',id='column'):
-			span(stats['name'],id='champpage')
+			span(champID,id='champpage')
 
 
 	dirName = stats["name"]
@@ -36,4 +36,9 @@ def create_page(champName):
 		f.write(doc.render())
 
 #create_page('Aatrox')
-[create_page(x) for x in championStats]
+count = 0
+for x in championStats:
+	create_page(x,count)
+	count+=1
+
+#[create_page(x,y) for x in championStats for y in range(len(championStats))]

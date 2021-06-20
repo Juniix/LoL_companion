@@ -9,6 +9,14 @@
 	margin-right: auto;
 }
 
+.spellIcon{
+	float:left;
+}
+
+.spellIcon img{
+	display: block;
+}
+
 h1 {
 	font-size: 30pt;
 }
