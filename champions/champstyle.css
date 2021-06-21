@@ -10,11 +10,36 @@
 }
 
 .spellIcon{
-	float:left;
+	display: inline-block;
+	width: 100%;
+	align-items: center;
 }
 
 .spellIcon img{
-	display: block;
+	float: left;
+	border: 3pt solid black;
+}
+
+.spellIcon h3{
+	margin-top: 0 auto; 
+	margin-left: 100px;
+}
+
+.spell{
+	margin-top: 30px;
+	padding: 20px;
+	border-bottom: 3px solid black;
+}
+
+.spellButton {
+	width: 50px;
+	height: 30px;
+	color: white;
+	font-size: 13pt;
+	cursor: pointer;
+	background-color: #111111;
+	border: 2px solid black;
+	border-radius: 0;
 }
 
 h1 {
@@ -22,11 +47,12 @@ h1 {
 }
 
 h3 {
+	margin-left: 20px;
 	color: grey;
 }
 
 p {
-	padding: 10px;
+	padding: 5px;
 }
 
 table, td, th {
