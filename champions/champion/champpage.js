@@ -45,7 +45,7 @@ fetch("./../../../data_dragon/11.10.1/data/en_US/championFull.json")
 							<th>Mana regen per level</th>
 							<th>AD</th>
 							<th>AD per level</th>
-							<th>AS per</th>
+							<th>AS</th>
 							<th>AS per level</th>
 						</tr>
 						<tr>
@@ -76,6 +76,7 @@ fetch("./../../../data_dragon/11.10.1/data/en_US/championFull.json")
 				<input class='spellButton' type="button" onclick='displaySpell(1)' value='W'></input>
 				<input class='spellButton' type="button" onclick='displaySpell(2)' value='E'></input>
 				<input class='spellButton' type="button" onclick='displaySpell(3)' value='R'></input>
+				<input class='spellButton' type="button" onclick='displaySpell(5)' value='All'></input>
 				<div class="spellResume">
 					<div class="spell" id='spell'>
 						<div class='spellIcon'>
@@ -84,39 +85,18 @@ fetch("./../../../data_dragon/11.10.1/data/en_US/championFull.json")
 						</div>
 						<p>${champ.passive.description}</p>
 					</div>
-
-
-					<!--<div class="spell">
-						<div class="spellIcon">
-							<img src="../../../data_dragon/11.10.1/img/spell/${champ.spells[0].image.full}">
-							<h3>Q : ${champ.spells[0].name}</h3>
-						</div>
-						<p>${champ.spells[0].description}</p>
-					</div>
-					<div class="spell">
-						<div class="spellIcon">
-							<img src="../../../data_dragon/11.10.1/img/spell/${champ.spells[1].image.full}">
-							<h3>W : ${champ.spells[1].name}</h3>
-						</div>
-						<p>${champ.spells[1].description}</p>
-					</div>
-					<div class="spell">
-						<div class="spellIcon">
-							<img src="../../../data_dragon/11.10.1/img/spell/${champ.spells[2].image.full}">
-							<h3>E : ${champ.spells[2].name}</h3>
-						</div>
-						<p>${champ.spells[2].description}</p>
-					</div>
-					<div class="spell">
-						<div class="spellIcon">
-							<img src="../../../data_dragon/11.10.1/img/spell/${champ.spells[3].image.full}">
-							<h3>R : ${champ.spells[3].name}</h3>
-						</div>
-						<p>${champ.spells[3].description}</p>
-					</div>-->
-
-
-				</div>`
+				</div>
+				<h2>Skins :</h2>
+				<div class='flex_skins_container'>
+				${champ.skins.map(function(skin){
+					return `
+					<div class='skinDiv'>
+						<img class'skinImg' src='../../../data_dragon/img/champion/loading/${champ.id}_${skin.num}.jpg'>
+						<p>${skin.name}</p>
+					</div>`
+				}).join('')}
+				</div>
+				`
 	})
 
 function displaySpell(spellID){
@@ -139,12 +119,64 @@ function displaySpell(spellID){
 									<h3>Passive : ${champ.passive.name}</h3>
 								</div>
 								<p>${champ.passive.description}</p>`
+		} else if(spellID==5){
+			spellDiv.innerHTML=`<div class="spell">
+									<div class='spellIcon'>
+										<img src="../../../data_dragon/11.10.1/img/passive/${champ.passive.image.full}">
+										<h3>Passive : ${champ.passive.name}</h3>
+									</div>
+									<p>${champ.passive.description}</p>
+								</div>
+								<div class="spell">
+									<div class="spellIcon">
+										<img src="../../../data_dragon/11.10.1/img/spell/${champ.spells[0].image.full}">
+										<h3>Q : ${champ.spells[0].name}</h3>
+									</div>
+									<p>${champ.spells[0].description}</p>
+									<p>Cost : ${champ.spells[0].costBurn}</p>
+									<p>Cooldown : ${champ.spells[0].cooldownBurn}</p>
+									<p>Range : ${champ.spells[0].rangeBurn}</p>
+								</div>
+								<div class="spell">
+									<div class="spellIcon">
+										<img src="../../../data_dragon/11.10.1/img/spell/${champ.spells[1].image.full}">
+										<h3>W : ${champ.spells[1].name}</h3>
+									</div>
+									<p>${champ.spells[1].description}</p>
+									<p>Cost : ${champ.spells[1].costBurn}</p>
+									<p>Cooldown : ${champ.spells[1].cooldownBurn}</p>
+									<p>Range : ${champ.spells[1].rangeBurn}</p>
+								</div>
+								<div class="spell">
+									<div class="spellIcon">
+										<img src="../../../data_dragon/11.10.1/img/spell/${champ.spells[2].image.full}">
+										<h3>E : ${champ.spells[2].name}</h3>
+									</div>
+									<p>${champ.spells[2].description}</p>
+									<p>Cost : ${champ.spells[2].costBurn}</p>
+									<p>Cooldown : ${champ.spells[2].cooldownBurn}</p>
+									<p>Range : ${champ.spells[2].rangeBurn}</p>
+								</div>
+								<div class="spell">
+									<div class="spellIcon">
+										<img src="../../../data_dragon/11.10.1/img/spell/${champ.spells[3].image.full}">
+										<h3>R : ${champ.spells[3].name}</h3>
+									</div>
+									<p>${champ.spells[3].description}</p>
+									<p>Cost : ${champ.spells[3].costBurn}</p>
+									<p>Cooldown : ${champ.spells[3].cooldownBurn}</p>
+									<p>Range : ${champ.spells[3].rangeBurn}</p>
+								</div>`
 		} else {
 			spellDiv.innerHTML=`<div class="spellIcon">
 									<img src="../../../data_dragon/11.10.1/img/spell/${champ.spells[spellID].image.full}">
 									<h3>${spellName} : ${champ.spells[spellID].name}</h3>
 								</div>
-								<p>${champ.spells[spellID].description}</p>`
+								<p>${champ.spells[spellID].description}</p>
+								<p>Cost : ${champ.spells[spellID].costBurn}</p>
+								<p>Cooldown : ${champ.spells[spellID].cooldownBurn}</p>
+								<p>Range : ${champ.spells[spellID].rangeBurn}</p>
+								`
 		}
-		})
+	})
 }
