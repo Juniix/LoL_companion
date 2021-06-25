@@ -15,7 +15,7 @@ fetch("./../data_dragon/11.10.1/data/en_US/item.json")
         document.getElementById("itemsmap").innerHTML = `
         ${items[0].map(function(item) {
             return `
-            <div><a href="items/${item.name}/index.html">
+            <div><a href="item/${item.name}/index.html">
                 <img class="main_page_icon" src="../data_dragon/11.10.1/img/item/${item.image.full}">${item.name}</img>
             </a></div>
             `

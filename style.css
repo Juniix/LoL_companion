@@ -55,3 +55,90 @@ div.flex_container > div {
 	margin: 20px;
 	text-align: center;
 }
+
+/* CUSTOM ELEMENTS */
+
+stats{
+}
+
+attention{
+	color: orange
+}
+
+passive{
+	color: yellow;
+	text-decoration: underline;
+}
+
+rarityLegendary{
+	color: orange;
+}
+
+rarityMythic{
+	text-decoration: underline;
+	color: purple;
+}
+
+scaleArmor{
+	color: yellow;
+}
+
+scaleMR{
+	color: violet;
+}
+
+active{
+	text-decoration: underline;
+	color: green;
+}
+
+shield{
+	color: #00d6d6;
+}
+
+physicalDamage{
+	color: darkred;
+}
+
+magicDamage{
+	color: violet;
+}
+
+status{
+	text-decoration: underline;
+	color: #00d6d6;
+}
+
+keywordstealth{
+	text-decoration: underline;
+	color: grey;
+}
+
+speed{
+	color: yellow;
+}
+
+truedamage{
+	text-decoration: underline;
+}
+
+lifesteal{
+	color: red;
+}
+
+scalehealth{
+	color: pink;
+}
+
+scalelethality{
+	color: darkred;
+}
+
+onhit{
+	text-decoration: underline;
+	color: orange;
+}
+
+healing{
+	color: lime;
+}

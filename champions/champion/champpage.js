@@ -91,11 +91,12 @@ fetch("./../../../data_dragon/11.10.1/data/en_US/championFull.json")
 				${champ.skins.map(function(skin){
 					return `
 					<div class='skinDiv'>
-						<img class'skinImg' src='../../../data_dragon/img/champion/loading/${champ.id}_${skin.num}.jpg'>
+						<img class='skinImg' src='../../../data_dragon/img/champion/loading/${champ.id}_${skin.num}.jpg' onclick='displayImg("${champ.id}_${skin.num}")'>
 						<p>${skin.name}</p>
 					</div>`
 				}).join('')}
 				</div>
+				<div id='imgFullSize'></div>
 				`
 	})
 
@@ -179,4 +180,24 @@ function displaySpell(spellID){
 								`
 		}
 	})
+}
+
+function displayImg(imgId){
+	fetch("./../../../data_dragon/11.10.1/data/en_US/championFull.json")
+    .then(response => response.json())
+    .then(function(data){
+        const champlist=[data];
+        const champs = champlist.map(obj => {
+            const champ = obj.data
+            return Object.values(champ)
+        });
+        const champ=champs[0][champID];
+		let imgDiv=document.getElementById('imgFullSize')
+		imgDiv.innerHTML=`<img class='displayedImg' src="../../../data_dragon/img/champion/splash/${imgId}.jpg" onclick='undisplay()'>
+						`
+	})
+}
+
+function undisplay(){
+	document.getElementById('imgFullSize').innerHTML=``
 }
