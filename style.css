@@ -27,7 +27,9 @@ h1{
 }
 
 h2{
-	color: #b30000;
+	color: white;
+	padding: 5px;
+	text-decoration: underline 5px solid #b30000;
 }
 
 p, li{
@@ -141,4 +143,8 @@ onhit{
 
 healing{
 	color: lime;
+}
+
+ornnBonus{
+	color: orange;
 }

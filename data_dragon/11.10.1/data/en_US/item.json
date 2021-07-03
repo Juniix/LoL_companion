@@ -4974,7 +4974,7 @@
             "description": "<mainText><stats></stats><active>Active - Consume:</active> Bind with an ally for the remainder of the game, becoming Oathsworn Allies. Oathsworn empowers you both while near one another.</mainText><br>",
             "gold": {
                 "base": 0,
-                "purchasable": true,
+                "purchasable": false,
                 "sell": 0,
                 "total": 0
             },
@@ -7706,7 +7706,7 @@
         "7014": {
             "colloq": "",
             "depth": 4,
-            "description": "<mainText><stats><ornnBonus>100</ornnBonus> Ability Power<br><ornnBonus>350</ornnBonus> Health<br><ornnBonus>800</ornnBonus> Mana<br><ornnBonus>25</ornnBonus> Ability Haste</stats><br><br><active>Active -</active> <active>Glaciate:</active> Deal <magicDamage>(100+30% Ability Power) magic damage</magicDamage> in a cone, <status>Slowing</status> enemies by 65% for 1.5 seconds. Enemies at the center of the cone are <status>Rooted</status> instead (30s cooldown).<br><hr><rarityMythic>Mythic Passive:</rarityMythic> Grants all other <rarityLegendary>Legendary</rarityLegendary> items <attention>15</attention> Ability Power. <br></mainText><br>",
+            "description": "<mainText><stats><ornnBonus>100</ornnBonus> Ability Power<br><ornnBonus>350</ornnBonus> Health<br><ornnBonus>800</ornnBonus> Mana<br><ornnBonus>25</ornnBonus> Ability Haste</stats><br><br><active>Active -</active> <active>Glaciate:</active> Deal <magicDamage>(100+30% Ability Power) magic damage</magicDamage> in a cone, <status>Slowing</status> enemies by 65% for 1.5 seconds. Enemies at the center of the cone are <status>Rooted</status> instead (30s cooldown).<br><br><rarityMythic>Mythic Passive:</rarityMythic> Grants all other <rarityLegendary>Legendary</rarityLegendary> items <attention>15</attention> Ability Power. <br></mainText><br>",
             "from": ["6656"],
             "gold": {
                 "base": 0,

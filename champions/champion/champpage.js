@@ -1,16 +1,16 @@
 let champID = document.getElementById('champpage').innerHTML
 
 fetch("./../../../data_dragon/11.10.1/data/en_US/championFull.json")
-    .then(response => response.json())
-    .then(function(data){
-        const champlist=[data];
-        const champs = champlist.map(obj => {
-            const champ = obj.data
-            return Object.values(champ)
-        });
-        console.log(champs[0])
-        const champ=champs[0][champID];
-        document.getElementById('column').innerHTML = `
+	.then(response => response.json())
+	.then(function(data){
+		const champlist=[data];
+		const champs = champlist.map(obj => {
+			const champ = obj.data
+			return Object.values(champ)
+		});
+		console.log(champs[0])
+		const champ=champs[0][champID];
+		document.getElementById('column').innerHTML = `
 				<h1>${champ.name}</h1>
 				<h3>the Darkin Blade</h3>
 				<img class="champImg" src="../../../data_dragon/img/champion/loading/${champ.id}_0.jpg">
@@ -104,15 +104,15 @@ function displaySpell(spellID){
 	const spellList=['Q','W','E','R']
 	let spellName=spellList[spellID]
 	fetch("./../../../data_dragon/11.10.1/data/en_US/championFull.json")
-    .then(response => response.json())
-    .then(function(data){
-        const champlist=[data];
-        const champs = champlist.map(obj => {
-            const champ = obj.data
-            return Object.values(champ)
-        });
-        console.log(champs[0])
-        const champ=champs[0][champID];
+	.then(response => response.json())
+	.then(function(data){
+		const champlist=[data];
+		const champs = champlist.map(obj => {
+			const champ = obj.data
+			return Object.values(champ)
+		});
+		console.log(champs[0])
+		const champ=champs[0][champID];
 		let spellDiv=document.getElementById('spell')
 		if (spellID==4){
 			spellDiv.innerHTML=`<div class='spellIcon'>
@@ -184,14 +184,14 @@ function displaySpell(spellID){
 
 function displayImg(imgId){
 	fetch("./../../../data_dragon/11.10.1/data/en_US/championFull.json")
-    .then(response => response.json())
-    .then(function(data){
-        const champlist=[data];
-        const champs = champlist.map(obj => {
-            const champ = obj.data
-            return Object.values(champ)
-        });
-        const champ=champs[0][champID];
+	/*.then(response => response.json())
+	.then(function(data){
+		const champlist=[data];
+		const champs = champlist.map(obj => {
+			const champ = obj.data
+			return Object.values(champ)
+		});
+		const champ=champs[0][champID];
 		let imgDiv=document.getElementById('imgFullSize')
 		imgDiv.innerHTML=`<img class='displayedImg' src="../../../data_dragon/img/champion/splash/${imgId}.jpg" onclick='undisplay()'>
 						`
@@ -199,5 +199,5 @@ function displayImg(imgId){
 }
 
 function undisplay(){
-	document.getElementById('imgFullSize').innerHTML=``
+	document.getElementById('imgFullSize').innerHTML=``*/
 }
