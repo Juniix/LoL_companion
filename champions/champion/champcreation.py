@@ -10,7 +10,8 @@ statsHeader=['Health','Health per level','Mana','Mana per level','Movement speed
 
 def create_page(champName,champID):
 	stats=championStats[champName]
-	doc=dominate.document(title=champName+' - LoL Companion')
+	doc=dominate.document(title=stats["name"]+' - LoL Companion')
+	print(stats['name'])
 
 	with doc.head:
 		link(rel='stylesheet', href='../../../style.css', type='text/css')

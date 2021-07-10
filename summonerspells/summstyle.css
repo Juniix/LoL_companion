@@ -1,0 +1,60 @@
+.champImg {
+	float: right;
+	padding: 10px;
+	height: 560px;
+}
+
+.display {
+	position: absolute;
+	margin-right: auto;
+}
+
+.summimg {
+	float: right;
+	margin: 10px;
+	height: 108px;
+	border: 3pt solid black;
+}
+
+.gold{
+	color: #c7af65;
+}
+
+.unpurch{
+	color: red;
+}
+
+h1 {
+	font-size: 30pt;
+}
+
+h3 {
+	font-size: 1.5rem;
+	color: gray;
+	margin-bottom: 5px;
+}
+
+h4{
+	margin-top: 0px;
+	margin-bottom: 5px;
+	color: gray;
+}
+
+p {
+	padding: 10px;
+}
+
+table, td, th {
+	color: white;
+	border: 1px solid gray;
+	border-collapse: collapse;
+}
+
+tr {
+	display: block;
+	float: left;
+}
+
+th, td {
+	display: block;
+}

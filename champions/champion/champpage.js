@@ -70,6 +70,7 @@ fetch("./../../../data_dragon/11.10.1/data/en_US/championFull.json")
 						</tr>
 					</tbody>
 				</table>
+				<p>Main ressource : ${champ.partype != "None" ? champ.partype : ``}</p>
 				<h2>Spells :</h2>
 				<input class='spellButton' type="button" onclick='displaySpell(4)' value='P'></input>
 				<input class='spellButton' type="button" onclick='displaySpell(0)' value='Q'></input>
@@ -78,12 +79,14 @@ fetch("./../../../data_dragon/11.10.1/data/en_US/championFull.json")
 				<input class='spellButton' type="button" onclick='displaySpell(3)' value='R'></input>
 				<input class='spellButton' type="button" onclick='displaySpell(5)' value='All'></input>
 				<div class="spellResume">
-					<div class="spell" id='spell'>
-						<div class='spellIcon'>
-							<img src="../../../data_dragon/11.10.1/img/passive/${champ.passive.image.full}">
-							<h3>Passive : ${champ.passive.name}</h3>
+					<div id='spell'>
+						<div class='spell'>
+							<div class='spellIcon'>
+								<img src="../../../data_dragon/11.10.1/img/passive/${champ.passive.image.full}">
+								<h3>Passive : ${champ.passive.name}</h3>
+							</div>
+							<p>${champ.passive.description}</p>
 						</div>
-						<p>${champ.passive.description}</p>
 					</div>
 				</div>
 				<h2>Skins :</h2>
@@ -115,11 +118,13 @@ function displaySpell(spellID){
 		const champ=champs[0][champID];
 		let spellDiv=document.getElementById('spell')
 		if (spellID==4){
-			spellDiv.innerHTML=`<div class='spellIcon'>
-									<img src="../../../data_dragon/11.10.1/img/passive/${champ.passive.image.full}">
-									<h3>Passive : ${champ.passive.name}</h3>
-								</div>
-								<p>${champ.passive.description}</p>`
+			spellDiv.innerHTML=`<div class='spell'>
+									<div class='spellIcon'>
+										<img src="../../../data_dragon/11.10.1/img/passive/${champ.passive.image.full}">
+										<h3>Passive : ${champ.passive.name}</h3>
+									</div>
+									<p>${champ.passive.description}</p>
+								</div>`
 		} else if(spellID==5){
 			spellDiv.innerHTML=`<div class="spell">
 									<div class='spellIcon'>
@@ -134,9 +139,9 @@ function displaySpell(spellID){
 										<h3>Q : ${champ.spells[0].name}</h3>
 									</div>
 									<p>${champ.spells[0].description}</p>
-									<p>Cost : ${champ.spells[0].costBurn}</p>
+									<p>Cost : ${champ.spells[0].costBurn} ${champ.partype != "None" ? champ.partype : ``}</p>
 									<p>Cooldown : ${champ.spells[0].cooldownBurn}</p>
-									<p>Range : ${champ.spells[0].rangeBurn}</p>
+									${spell.rangeBurn<25000 ? `<p>Range : ${spell.rangeBurn}</p>` : ``}
 								</div>
 								<div class="spell">
 									<div class="spellIcon">
@@ -144,9 +149,9 @@ function displaySpell(spellID){
 										<h3>W : ${champ.spells[1].name}</h3>
 									</div>
 									<p>${champ.spells[1].description}</p>
-									<p>Cost : ${champ.spells[1].costBurn}</p>
+									<p>Cost : ${champ.spells[1].costBurn} ${champ.partype != "None" ? champ.partype : ``}</p>
 									<p>Cooldown : ${champ.spells[1].cooldownBurn}</p>
-									<p>Range : ${champ.spells[1].rangeBurn}</p>
+									${spell.rangeBurn<25000 ? `<p>Range : ${spell.rangeBurn}</p>` : ``}
 								</div>
 								<div class="spell">
 									<div class="spellIcon">
@@ -155,8 +160,8 @@ function displaySpell(spellID){
 									</div>
 									<p>${champ.spells[2].description}</p>
 									<p>Cost : ${champ.spells[2].costBurn}</p>
-									<p>Cooldown : ${champ.spells[2].cooldownBurn}</p>
-									<p>Range : ${champ.spells[2].rangeBurn}</p>
+									<p>Cooldown : ${champ.spells[2].cooldownBurn} ${champ.partype != "None" ? champ.partype : ``}</p>
+									${spell.rangeBurn<25000 ? `<p>Range : ${spell.rangeBurn}</p>` : ``}
 								</div>
 								<div class="spell">
 									<div class="spellIcon">
@@ -164,19 +169,22 @@ function displaySpell(spellID){
 										<h3>R : ${champ.spells[3].name}</h3>
 									</div>
 									<p>${champ.spells[3].description}</p>
-									<p>Cost : ${champ.spells[3].costBurn}</p>
+									<p>Cost : ${champ.spells[3].costBurn} ${champ.partype != "None" ? champ.partype : ``}</p>
 									<p>Cooldown : ${champ.spells[3].cooldownBurn}</p>
-									<p>Range : ${champ.spells[3].rangeBurn}</p>
+									${spell.rangeBurn<25000 ? `<p>Range : ${spell.rangeBurn}</p>` : ``}
 								</div>`
 		} else {
-			spellDiv.innerHTML=`<div class="spellIcon">
-									<img src="../../../data_dragon/11.10.1/img/spell/${champ.spells[spellID].image.full}">
-									<h3>${spellName} : ${champ.spells[spellID].name}</h3>
+			const spell=champ.spells[spellID]
+			spellDiv.innerHTML=`<div class='spell'>
+									<div class="spellIcon">
+										<img src="../../../data_dragon/11.10.1/img/spell/${spell.image.full}">
+										<h3>${spellName} : ${spell.name}</h3>
+									</div>
+									<p>${spell.description}</p>
+									<p>Cost : ${spell.costBurn} ${champ.partype != "None" ? champ.partype : ``}</p>
+									<p>Cooldown : ${spell.cooldownBurn}</p>
+									${spell.rangeBurn<25000 ? `<p>Range : ${spell.rangeBurn}</p>` : ``}
 								</div>
-								<p>${champ.spells[spellID].description}</p>
-								<p>Cost : ${champ.spells[spellID].costBurn}</p>
-								<p>Cooldown : ${champ.spells[spellID].cooldownBurn}</p>
-								<p>Range : ${champ.spells[spellID].rangeBurn}</p>
 								`
 		}
 	})
